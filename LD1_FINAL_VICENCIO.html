@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jen's Bakery</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #FAF3E0; 
+            scroll-behavior: smooth;
+            color: #4E342E; 
+        }
+
+        header {
+            background-color: #8B5E3B; 
+            color: white;
+            padding:5px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: url('images/bakery-bg.jpg') no-repeat center center/cover;
+            color: black;
+            padding: 100px 20px 50px;
+            margin-top: 60px;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        #about, #contact {
+            background-color: #F4E1C1; /* Light beige */
+            padding: 300px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 200px;
+            background-color: #FFF8E1; /* Off-white */
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: auto;
+        }
+
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #8B5E3B; 
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8B5E3B;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: #4E342E;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jen's Bakery</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <section id="login">
+        <h2>Login</h2>
+        <form onsubmit="return checkLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error-message" style="color: red;"></p>
+    </section>
+
+    <section id="home" class="hero" style="display: none;">
+        <h2>Freshly Baked, Just for You</h2>
+        <p>Delicious homemade cake made with love.</p>
+    </section>
+    <section id="about" style="display: none;">
+        <h2>About Us</h2>
+        <p>Welcome to <b>Jen's Bakery</b>! We are a family-run bakery dedicated to crafting delicious cake.</p>
+    </section>
+    <section id="menu" style="display: none;">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            
+            <div class="item">
+                <img src="C:\VICENCIO, JENNY ROSE BSIT 2B\PDP_Everyday_Deco_Vintage-Heart-Black_03__70540.jpg" alt="Chocolate Cake">
+                <h3>Chocolate Cake</h3>
+                <p>500</p>
+            </div>
+            <div class="item">
+                <img src="C:\VICENCIO, JENNY ROSE BSIT 2B\images.jpg" alt="Butter Croissant">
+                <h3>Butter Croissant</h3>
+                <p>100</p>
+            </div>
+            <div class="item">
+                <img src="C:\VICENCIO, JENNY ROSE BSIT 2B\hq720.jpg" alt="Pandisal">
+                <h3>Pandisal with cheese</h3>
+                <p>3</p>
+            </div>
+            <div class="item">
+                <img src="C:\VICENCIO, JENNY ROSE BSIT 2B\Individual-Garlic-Breads-IMAGE-12.jpg" alt="Pandisal">
+                <h3>Slice Bread with cheese</h3>
+                <p>50</p>
+            </div>
+            <div class="item">
+                <img src="C:\VICENCIO, JENNY ROSE BSIT 2B\Chocolate-Chip-Cookies-Love-Collection-1024x1024.png" alt="Cookies">
+                <h3>Chocolate Chip Cookies</h3>
+                <p>150 (per dozen)</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact" style="display: none;">
+        <h2>Contact Us</h2>
+        <form>
+            
+            <h2>Contact Us</h2>
+        <div class="contact-details">
+            <p><b>Address:</b> Pojo, Bugasong</p>
+            <p><b>Phone:</b> 09087645678</p>
+            <p><b>Email:</b> jensbakery@gmail.com</p>
+        </div>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="address">Address:</label>
+            <input type="address" id="address" name="address" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        Publish And Develop By: Jenny Rose P. Vicencio    
+    </footer>
+
+    <script>
+        const correctUsername = "admin123";
+        const correctPassword = "admin123";
+
+        function checkLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === correctUsername && password === correctPassword) {
+                alert("Login successful!");
+                
+                
+                document.getElementById("login").style.display = "none";
+                document.getElementById("home").style.display = "block";
+                document.getElementById("about").style.display = "block";
+                document.getElementById("menu").style.display = "block";
+                document.getElementById("contact").style.display = "block";
+                document.getElementById("Jen's Bakery").style.display = "block";
+
+            } else {
+                document.getElementById("error-message").textContent = "Incorrect username or password.";
+            }
+        }
+    </script>
+</body>
+</html>
